@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TEST</title>
 </head>
 <body>
   
+  <form>
+    <h1>Formulario</h1>
+    <input placeholder="Usuario" type="text" name="nombre" id="nombre">
+    <input placeholder="******" type="password" name="apellido" id="apellido">
+    <button id="boton" type="submit">
+      Enviar
+    </button>
+  </form>
+  <script> 
+  const boton = document.getElementById('boton');
+  boton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    console.log(nombre, apellido);
+  });
+  </script>
 </body>
 </html>
