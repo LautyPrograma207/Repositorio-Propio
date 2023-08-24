@@ -1,0 +1,228 @@
+#include <iostream>
+#include <iomanip> 
+using namespace std;
+
+int main() {
+    // Ejercicio 1A
+    string nombre, apellido;
+    cout << "Ingrese su nombre: ";
+    cin >> nombre;
+    cout << "Ingrese su apellido: ";
+    cin >> apellido;
+    string nombre_completo = nombre + " " + apellido;
+    cout << "Nombre completo: " << nombre_completo << endl;
+
+  
+    // Ejercicio 1C
+    cout << "Texto en una línea" << endl;
+    cout << "Texto en otra línea" << endl << endl; 
+
+    // Ejercicio 2
+    float precio;
+    cout << "Ingrese el precio del producto: ";
+    cin >> precio;
+    float iva = precio * 0.21;  // Suponiendo un IVA del 21%
+    float precio_con_iva = precio + iva;
+    cout << "Precio con IVA: " << precio_con_iva << endl;
+
+    // Ejercicio 3.1
+    int edad;
+    char sexo;
+    float altura;
+    cout << "Ingrese la edad: ";
+    cin >> edad;
+    cout << "Ingrese el sexo (M/F): ";
+    cin >> sexo;
+    cout << "Ingrese la altura en metros: ";
+    cin >> altura;
+    cout << "Edad: " << edad << ", Sexo: " << sexo << ", Altura: " << altura << endl;
+
+    // Ejercicio 3.2
+    cout << "Introduzca un dato de tipo carácter cuando se espera un dato de tipo entero." << endl;
+    cout << "El programa puede comportarse de manera impredecible." << endl << endl;
+
+    // Ejercicio 4
+    float cotizacion_dolar = 720.0;  // Supongamos una cotización de 720 ARS por 1 USD ;c
+    float monto_pesos;
+    cout << "Ingrese la cantidad en pesos argentinos: ";
+    cin >> monto_pesos;
+    float monto_dolares = monto_pesos / cotizacion_dolar;
+    cout << "Monto en dólares: " << fixed << setprecision(2) << monto_dolares << endl;
+
+    // Ejercicio 5
+    int a = 5, b = 10, c = 15;
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
+
+   // Ejercicio 6.1
+    int segundos;
+    cout << "Ingrese la cantidad de segundos: ";
+    cin >> segundos;
+    int horas = segundos / 3600;
+    int minutos = (segundos % 3600) / 60;
+    int segundos_restantes = segundos % 60;
+    cout << "Horas: " << horas << ", Minutos: " << minutos << ", Segundos: " << segundos_restantes << endl;
+
+    // Ejercicio 6.2
+    int horas2, minutos2, segundos2;
+    cout << "Ingrese la cantidad de horas: ";
+    cin >> horas2;
+    cout << "Ingrese la cantidad de minutos: ";
+    cin >> minutos2;
+    cout << "Ingrese la cantidad de segundos: ";
+    cin >> segundos2;
+    int total_segundos = horas2 * 3600 + minutos2 * 60 + segundos2;
+    cout << "Total de segundos: " << total_segundos << endl;
+
+    // Ejercicio 7
+    double cateto1, cateto2;
+    cout << "Ingrese el valor del primer cateto: ";
+    cin >> cateto1;
+    cout << "Ingrese el valor del segundo cateto: ";
+    cin >> cateto2;
+    double hipotenusa = sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+    double perimetro = cateto1 + cateto2 + hipotenusa;
+    double superficie = (cateto1 * cateto2) / 2;
+    cout << "Perímetro: " << perimetro << ", Superficie: " << superficie << ", Hipotenusa: " << hipotenusa << endl;
+
+    // Ejercicio 8
+    int N;
+    cout << "Ingrese la cantidad de alumnos: ";
+    cin >> N;
+    for (int i = 0; i < N; i++) {
+        double nota_practicas, nota_teoria, nota_participacion;
+        cout << "Ingrese la nota de prácticas: ";
+        cin >> nota_practicas;
+        cout << "Ingrese la nota teórica: ";
+        cin >> nota_teoria;
+        cout << "Ingrese la nota de participación: ";
+        cin >> nota_participacion;
+        double nota_final = (nota_practicas * 0.3) + (nota_teoria * 0.6) + (nota_participacion * 0.1);
+        cout << "Nota final del alumno " << i + 1 << ": " << nota_final << endl;
+    }
+
+    // Ejercicio 9
+    string nombre1, nombre2;
+    double tiempo1, tiempo2;
+    cout << "Ingrese el nombre de la nadadora 1: ";
+    cin >> nombre1;
+    cout << "Ingrese el tiempo de nado de la nadadora 1: ";
+    cin >> tiempo1;
+    cout << "Ingrese el nombre de la nadadora 2: ";
+    cin >> nombre2;
+    cout << "Ingrese el tiempo de nado de la nadadora 2: ";
+    cin >> tiempo2;
+    if (tiempo1 < tiempo2) {
+        cout << "La nadadora " << nombre1 << " llegó primero." << endl;
+    } else if (tiempo2 < tiempo1) {
+        cout << "La nadadora " << nombre2 << " llegó primero." << endl;
+    } else {
+        cout << "Ambas nadadoras llegaron al mismo tiempo." << endl;
+    }
+
+    // Ejercicio 10
+    char nombre[100];
+    int ano_nacimiento;
+    cout << "Ingrese su nombre: ";
+    cin.ignore(); 
+    cin.getline(nombre, 100);
+    cout << "Ingrese su año de nacimiento: ";
+    cin >> ano_nacimiento;
+    int edad = 2023 - ano_nacimiento;
+    cout << "Su edad es: " << edad << " años." << endl;
+
+    // Ejercicio 11
+    double num1, num2;
+    cout << "Ingrese el primer número: ";
+    cin >> num1;
+    cout << "Ingrese el segundo número: ";
+    cin >> num2;
+    cout << "Suma: " << num1 + num2 << endl;
+    cout << "Resta: " << num1 - num2 << endl;
+    cout << "Multiplicación: " << num1 * num2 << endl;
+    cout << "División: " << num1 / num2 << endl;
+
+    // Ejercicio 12
+    double a, b, c;
+    cout << "Ingrese el valor de a: ";
+    cin >> a;
+    cout << "Ingrese el valor de b: ";
+    cin >> b;
+    cout << "Ingrese el valor de c: ";
+    cin >> c;
+    double discriminante = b * b - 4 * a * c;
+    if (discriminante > 0) {
+        double solucion1 = (-b + sqrt(discriminante)) / (2 * a);
+        double solucion2 = (-b - sqrt(discriminante)) / (2 * a);
+        cout << "Solución 1: " << solucion1 << endl;
+        cout << "Solución 2: " << solucion2 << endl;
+    } else if (discriminante == 0) {
+        double solucion = -b / (2 * a);
+        cout << "Única solución: " << solucion << endl;
+    } else {
+        cout << "La ecuación no tiene soluciones reales." << endl;
+    }
+
+     double a, b, c, d, e, f;
+
+    // Ejercicio 13 - A
+    cout << "Ingrese el valor de a: ";
+    cin >> a;
+    cout << "Ingrese el valor de b: ";
+    cin >> b;
+    double resultadoA = (a / b) + 1;
+    cout << "Resultado A: " << fixed << setprecision(2) << resultadoA << endl;
+
+    // Ejercicio 13 - B
+    cout << "Ingrese el valor de a: ";
+    cin >> a;
+    cout << "Ingrese el valor de b: ";
+    cin >> b;
+    cout << "Ingrese el valor de c: ";
+    cin >> c;
+    cout << "Ingrese el valor de d: ";
+    cin >> d;
+    double resultadoB = (a + b) / (c + d);
+    cout << "Resultado B: " << fixed << setprecision(2) << resultadoB << endl;
+
+    // Ejercicio 13 - C
+    cout << "Ingrese el valor de a: ";
+    cin >> a;
+    cout << "Ingrese el valor de b: ";
+    cin >> b;
+    cout << "Ingrese el valor de c: ";
+    cin >> c;
+    cout << "Ingrese el valor de d: ";
+    cin >> d;
+    cout << "Ingrese el valor de e: ";
+    cin >> e;
+    cout << "Ingrese el valor de f: ";
+    cin >> f;
+    double resultadoC = (a + (b / c)) / (d + (e / f));
+    cout << "Resultado C: " << fixed << setprecision(2) << resultadoC << endl;
+
+    // Ejercicio 13 - D
+    cout << "Ingrese el valor de a: ";
+    cin >> a;
+    cout << "Ingrese el valor de b: ";
+    cin >> b;
+    cout << "Ingrese el valor de c: ";
+    cin >> c;
+    cout << "Ingrese el valor de d: ";
+    cin >> d;
+    double resultadoD = a + (b / (c - d));
+    cout << "Resultado D: " << fixed << setprecision(2) << resultadoD << endl;
+
+    // Ejercicio 14
+    double x, y;
+    cout << "Ingrese el valor de x: ";
+    cin >> x;
+    cout << "Ingrese el valor de y: ";
+    cin >> y;
+    double resultadoE = sqrt(x / (y * y - 1));
+    cout << "Resultado de la función f(x,y) = √(x / (y^2 - 1)): " << fixed << setprecision(2) << resultadoE << endl;
+
+    return 0;
+}
