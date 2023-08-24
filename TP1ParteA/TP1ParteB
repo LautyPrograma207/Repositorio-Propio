@@ -1,0 +1,254 @@
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+using namespace std;
+int main() {
+    // Ejercicio 1: Tabla de multiplicar usando un menú
+    int opcion;
+
+    do {
+        cout << "Ejercicio 1: Tabla de multiplicar" << endl;
+        cout << "1. Tabla del 2" << endl;
+        cout << "2. Tabla del 3" << endl;
+        cout << "3. Tabla del 4" << endl;
+        cout << "4. Tabla del 5" << endl;
+        cout << "5. Tabla del 6" << endl;
+        cout << "6. Tabla del 7" << endl;
+        cout << "7. Tabla del 8" << endl;
+        cout << "8. Tabla del 9" << endl;
+        cout << "9. Tabla del 10" << endl;
+        cout << "0. Salir" << endl;
+        cout << "Seleccione una opción: ";
+        cin >> opcion;
+
+        if (opcion >= 1 && opcion <= 9) {
+            cout << "Tabla del " << opcion << ":" << endl;
+            for (int i = 1; i <= 10; i++) {
+                cout << opcion << " x " << i << " = " << opcion * i << endl;
+            }
+        } else if (opcion != 0) {
+            cout << "Opción inválida. Por favor, seleccione una opción válida." << endl;
+        }
+        cout << endl;
+
+    } while (opcion != 0);
+
+    cout << "¡Hasta luego!" << endl;
+
+    // Ejercicio 2: Lectura de números y conteo mayores que cero usando do-while
+    int numero;
+    int contador = 0;
+
+    do {
+        cout << "Ingrese un número (0 para terminar): ";
+        cin >> numero;
+
+        if (numero > 0) {
+            contador++;
+        }
+    } while (numero != 0);
+
+    cout << "Se introdujeron " << contador << " números mayores que cero." << endl;
+
+    // Ejercicio 3: Suma de cuadrados de los 10 primeros enteros mayores que cero
+    int suma = 0;
+
+    for (int i = 1; i <= 10; i++) {
+        int num;
+        cout << "Ingrese un número: ";
+        cin >> num;
+
+        if (num <= 0) {
+            cout << "Número inválido. Debe ser mayor que cero." << endl;
+            i--;
+            continue;
+        }
+
+        suma += num * num;
+    }
+    cout << "La suma de los cuadrados de los 10 primeros enteros mayores que cero es: " << suma << endl;
+
+    // Ejercicio 4: Temperaturas del día
+    const int totalTemperaturas = 6;
+    int temperaturas[totalTemperaturas];
+    int sumaTemperaturas = 0;
+    int temperaturaMaxima = -273;  // Valor mínimo de temperatura posible
+    int temperaturaMinima = 1000;  // Valor máximo de temperatura posible
+
+    for (int i = 0; i < totalTemperaturas; i++) {
+        cout << "Ingrese la temperatura " << i + 1 << " en grados Celsius: ";
+        cin >> temperaturas[i];
+
+        sumaTemperaturas += temperaturas[i];
+
+        if (temperaturas[i] > temperaturaMaxima) {
+            temperaturaMaxima = temperaturas[i];
+        }
+
+        if (temperaturas[i] < temperaturaMinima) {
+            temperaturaMinima = temperaturas[i];
+        }
+    }
+    int temperaturaMedia = sumaTemperaturas / totalTemperaturas;
+    cout << "Temperatura media del día: " << temperaturaMedia << "°C" << endl;
+    cout << "Temperatura más alta: " << temperaturaMaxima << "°C" << endl;
+    cout << "Temperatura más baja: " << temperaturaMinima << "°C" << endl;
+
+    // Ejercicio 5: Suma de valores mayores que cero en rango [20-30]
+    int valor;
+    int sumaValores = 0;
+
+    do {
+        cout << "Ingrese un valor (0 para terminar): ";
+        cin >> valor;
+
+        if (valor > 0) {
+            sumaValores += valor;
+        }
+    } while (valor != 0 && (valor < 20 || valor > 30));
+    cout << "La suma de los valores mayores que cero introducidos es: " << sumaValores << endl;
+
+    // Ejercicio 6: Potencia de número generado aleatoriamente
+    srand(time(0));
+    int num = rand() % 41 + 2;  // Generar num entre 2 y 42
+    int exp;
+
+    cout << "Número generado: " << num << endl;
+    cout << "Ingrese el exponente (no mayor a 5): ";
+    cin >> exp;
+
+    if (exp > 5 || exp <= 0) {
+        cout << "Exponente inválido. Debe ser un número entre 1 y 5." << endl;
+    } else {
+        int resultado = 1;
+        for (int i = 0; i < exp; i++) {
+            resultado *= num;
+        }
+        cout << num << " ^ " << exp << " = " << resultado << endl;
+    }
+
+    // Ejercicio 7A: Suma de números del 1 al n usando while
+    int n;
+    cout << "Ingrese un valor n para el ejercicio 7A: ";
+    cin >> n;
+    int suma7A = 0;
+    int i = 1;
+    while (i <= n) {
+        suma7A += i;
+        i++;
+    }
+    cout << "La suma de los números del 1 al " << n << " es: " << suma7A << endl;
+
+    // Ejercicio 7B: Suma de números impares del 1 al 2n-1 usando for
+    cout << "Ingrese un valor n para el ejercicio 7B: ";
+    cin >> n;
+    int suma7B = 0;
+    for (int j = 1; j <= 2 * n - 1; j += 2) {
+        suma7B += j;
+    }
+    cout << "La suma de los números impares del 1 al " << 2 * n - 1 << " es: " << suma7B << endl;
+
+    
+    // Ejercicio 7A: Suma usando un while
+    cout << "Ingrese un valor n para el ejercicio 7A: ";
+    cin >> n;
+    int suma7A = 0;
+    int i = 1;
+    while (i <= n) {
+        suma7A += i;
+        i++;
+    }
+    cout << "La suma de los números del 1 al " << n << " es: " << suma7A << endl;
+
+    // Ejercicio 7B: Suma usando un for
+    cout << "Ingrese un valor n para el ejercicio 7B: ";
+    cin >> n;
+    int suma7B = 0;
+    for (int j = 1; j <= 2 * n - 1; j += 2) {
+        suma7B += j;
+    }
+    cout << "La suma de los números impares del 1 al " << 2 * n - 1 << " es: " << suma7B << endl;
+
+    // Ejercicio 8: Conteo de aprobados en exámenes
+    int aprobadosTodos = 0;
+    int aprobadosAlMenosUno = 0;
+    int aprobadosUltimo = 0;
+
+    for (int k = 1; k <= 5; k++) {
+        int examen1, examen2, examen3;
+        cout << "Ingrese las notas del alumno " << k << " (examen1 examen2 examen3): ";
+        cin >> examen1 >> examen2 >> examen3;
+
+        if (examen1 >= 4 && examen2 >= 4 && examen3 >= 4) {
+            aprobadosTodos++;
+        }
+        if (examen1 >= 4 || examen2 >= 4 || examen3 >= 4) {
+            aprobadosAlMenosUno++;
+        }
+        if (examen3 >= 4) {
+            aprobadosUltimo++;
+        }
+    }
+
+    cout << "a) Alumnos que aprobaron todos los exámenes: " << aprobadosTodos << endl;
+    cout << "b) Alumnos que aprobaron al menos un examen: " << aprobadosAlMenosUno << endl;
+    cout << "c) Alumnos que aprobaron únicamente el último examen: " << aprobadosUltimo << endl;
+
+    // Ejercicio 9: Cálculo de factorial
+    cout << "Ingrese un valor n para el ejercicio 9: ";
+    cin >> n;
+    int factorial = 1;
+    for (int l = 1; l <= n; l++) {
+        factorial *= l;
+    }
+    cout << "El factorial de " << n << " es: " << factorial << endl;
+
+    // Ejercicio 10: Suma de factoriales
+    cout << "Ingrese un valor n para el ejercicio 10: ";
+    cin >> n;
+    int sumaFactoriales = 0;
+    int factorialActual = 1;
+    for (int m = 1; m <= n; m++) {
+        factorialActual *= m;
+        sumaFactoriales += factorialActual;
+    }
+    cout << "La suma de factoriales hasta " << n << " es: " << sumaFactoriales << endl;
+
+    // Ejercicio 11: Suma de potencias de 2
+    cout << "Ingrese un valor n para el ejercicio 11: ";
+    cin >> n;
+    int sumaPotencias2 = 0;
+    int potencia2 = 1;
+    for (int i = 1; i <= n; i++) {
+        potencia2 *= 2;
+        sumaPotencias2 += potencia2;
+    }
+    cout << "La suma de las potencias de 2 hasta 2^" << n << " es: " << sumaPotencias2 << endl;
+
+    // Ejercicio 12: Suma alternante
+    cout << "Ingrese un valor n para el ejercicio 12: ";
+    cin >> n;
+    int sumaAlternante = 0;
+    for (int j = 1; j <= n; j++) {
+        if (j % 2 == 1) {
+            sumaAlternante += j;
+        } else {
+            sumaAlternante -= j;
+        }
+    }
+    cout << "El resultado de la expresión 1-2+3-4+5-6...+" << n << " es: " << sumaAlternante << endl;
+
+    // Ejercicio 13: Serie Fibonacci
+    cout << "Ingrese un valor n para el ejercicio 13: ";
+    cin >> n;
+    int a = 0, b = 1;
+    cout << "Serie Fibonacci(" << n << ") = ";
+    for (int k = 1; k <= n; k++) {
+        cout << a << " ";
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+    cout << endl;
